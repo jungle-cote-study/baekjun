@@ -1,4 +1,4 @@
-# 단어 정렬
+# 2309 : 일곱 난이
 import sys
 from itertools import permutations
 
