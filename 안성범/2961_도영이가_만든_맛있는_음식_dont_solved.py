@@ -10,7 +10,6 @@ ans = 1e9
 for taste in tastes:
     if (taste[1]-taste[0] < ans):
         ans = taste[1]-taste[0]
-print(ans) 
-# while True:
-#     food = []
+while True:
+    food = []
     
