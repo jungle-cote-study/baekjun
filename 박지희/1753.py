@@ -13,21 +13,22 @@ for i in range(E):
     graph[u].append([v,w])
 dist_list = [sys.maxsize] * (V+1)  
 
+# 이제 시작지점을 큐에 넣고 반복문을 돈다.
 que = [] 
 heapq.heappush(que, [0, start_v])
 dist_list[start_v] = 0 # 시작 지점의 비용은 0이다. 
 
-while(que):
+while que:
     # 가장 비용이 작은 노드 탐색 
     min_dist, min_node = heapq.heappop(que)
     # 가장 비용이 작은 노드에서 갈 수 있는 방향 탐색하기
-    for v, d in graph[min_node]:
-        if dist_list[v] > dist_list[min_node] + d:
-            dist_list[v] = dist_list[min_node] + d
-            heapq.heappush(que, [d, v])
+    for v, w in graph[min_node]:
+        if dist_list[v] > dist_list[min_node] + w:
+            dist_list[v] = dist_list[min_node] + w
+            heapq.heappush(que, [dist_list[v], v])
         
 for d in dist_list[1:]: 
     if d == sys.maxsize:
         print("INF")
-    else :
+    else:
         print(d)
