@@ -13,7 +13,6 @@ for i in range(E):
     graph[u].append([v,w])
 dist_list = [sys.maxsize] * (V+1)  
 
-# 이제 시작지점을 큐에 넣고 반복문을 돈다.
 que = [] 
 heapq.heappush(que, [0, start_v])
 dist_list[start_v] = 0 # 시작 지점의 비용은 0이다. 
